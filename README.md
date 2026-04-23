@@ -148,6 +148,4 @@ troubleshooting.
 
 Proprietary © 2026 aiSwingX. All rights reserved.
 
-Source: [louisbyun/narubase-probe](https://github.com/louisbyun/narubase-probe) (private).
-
 Contact: [Louis Byun on GitHub](https://github.com/louisbyun)
