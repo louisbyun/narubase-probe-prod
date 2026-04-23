@@ -20,6 +20,10 @@
 
 </div>
 
+<div align="center">
+<img src="screenshots/diagnose.png" alt="NaruBase Probe — Diagnose tab showing a completed probe with matched case and ready-to-send IT ticket" width="900" />
+</div>
+
 ---
 
 ## "Why is this app broken?"
@@ -67,6 +71,10 @@ rules that matched, with what weights, against what measured values. Your
 security team can statically review the entire case database before you
 install. Nothing is hidden behind an opaque AI call — because there is no
 AI call.
+
+<div align="center">
+<img src="screenshots/auditor-trace.png" alt="Auditor trace view — shows every pattern evaluated against the probe result, with expected vs actual values and per-pattern pass/fail" width="820" />
+</div>
 
 ### 💳 One-time purchase. No subscription.
 
