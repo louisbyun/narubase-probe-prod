@@ -72,14 +72,14 @@ security team can statically review the entire case database before you
 install. Nothing is hidden behind an opaque AI call — because there is no
 AI call.
 
-<div align="center">
-<img src="screenshots/auditor-trace.png" alt="Auditor trace view — shows every pattern evaluated against the probe result, with expected vs actual values and per-pattern pass/fail" width="820" />
-</div>
-
 ### 💳 One-time purchase. No subscription.
 
 $99 once. You own it. Use it on every computer you own with the same license
 key. Pricing tiers for teams and site licenses available on request.
+
+<div align="center">
+<img src="screenshots/about.png" alt="About tab showing trial status, Buy License button, and Enter License Key activation" width="820" />
+</div>
 
 ## Who it's for
 
@@ -105,6 +105,10 @@ key. Pricing tiers for teams and site licenses available on request.
   phone-home
 - **Polished email delivery** — your license key lands in your inbox within
   minutes of purchase, in a branded HTML email
+
+<div align="center">
+<img src="screenshots/history.png" alt="History tab with past diagnoses listed — timestamps, targets, top-matched cases, and confidence scores" width="820" />
+</div>
 
 ## Roadmap
 
