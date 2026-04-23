@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="logo.png" alt="NaruBase Probe" width="96" height="96" />
+<img src="logo.png" alt="NaruBase™ Probe" width="96" height="96" />
 
 # NaruBase™ Probe
 
@@ -9,14 +9,14 @@
 **The only AI-like network diagnostic your corporate IT will actually approve.**
 100% local. No cloud. No telemetry. No accounts.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-success)](https://github.com/louisbyun/narubase-probe-prod/releases/latest)
+[![Version](https://img.shields.io/badge/version-1.1.0-success)](https://github.com/louisbyun/narubase-probe-prod/releases/latest)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)]()
 [![Price](https://img.shields.io/badge/price-%2499%20one--time-0ea5e9)]()
 [![License](https://img.shields.io/badge/license-Proprietary-blue)]()
 
 ### [⬇ Download for Windows](https://github.com/louisbyun/narubase-probe-prod/releases/latest) &nbsp;·&nbsp; [📖 Install guide](INSTALL.md)
 
-**Free during early access.** $99 one-time at v1.1. **No subscription. Ever.**
+**$99 one-time. No subscription. Ever.** 7-day free trial on first launch.
 
 </div>
 
@@ -32,7 +32,7 @@ bounces for three days: *"what's broken?"* → *"the app"* → *"which part?"* �
 Meanwhile your browser keeps saying "Connection not secure" and your boss is
 asking why the report isn't ready.
 
-**NaruBase Probe tells you exactly what's wrong — in the same tab — and
+**NaruBase™ Probe tells you exactly what's wrong — in the same tab — and
 writes the IT ticket for you.**
 
 ## In 10 seconds
@@ -52,12 +52,13 @@ your machine.
 
 ### 🔒 100% local. No exceptions.
 
-No cloud AI. No telemetry. No accounts. No license server check-in. Your
-diagnostic data — the URLs you test, the certificates you see, the DNS
-answers you get — **never leaves your computer**.
+No cloud AI. No telemetry. No accounts. **License activation is fully offline**
+— verified against an embedded public key, stored in your Windows Credential
+Manager. Your diagnostic data — the URLs you test, the certificates you see,
+the DNS answers you get — **never leaves your computer**.
 
 The only outbound network request the app makes is an optional version
-check against GitHub (toggle-off in Settings). That's it.
+check against a public GitHub JSON file.
 
 ### 📋 Auditable by design
 
@@ -69,8 +70,8 @@ AI call.
 
 ### 💳 One-time purchase. No subscription.
 
-$99 once. You own it. Use it on your work laptop forever. Pricing tiers for
-teams and site licenses available on request.
+$99 once. You own it. Use it on every computer you own with the same license
+key. Pricing tiers for teams and site licenses available on request.
 
 ## Who it's for
 
@@ -80,33 +81,39 @@ teams and site licenses available on request.
 | **An IT helpdesk agent** drowning in vague tickets | Triage incoming issues in seconds with a single-pane diagnostic |
 | **A consultant / freelancer** hopping between client networks | Understand a new corporate environment in one run |
 
-## What's in v1.0
+## What's in v1.1.0
 
-- **DNS** and **TLS** diagnostic probes (more coming every release)
+- **DNS** and **TLS** diagnostic probes, running locally in parallel
 - Detection of the #1 enterprise blocker: **corporate TLS inspection**
-  rewriting certificates with an internal CA your app doesn't trust
-- Ready-to-send IT ticket messages in **English, Korean, and Japanese**
-- Full auditor view of every matching rule
-- Cross-version update notifications
+  re-signing certificates with an internal CA your app doesn't trust
+- **Ready-to-send IT ticket messages** in English, Korean, and Japanese — with
+  target, host, and issuer pre-filled. One-click **Copy IT message** button.
+- **Local diagnose history** — every run saved, click any past run to revisit
+  the full report. Build a timeline of when connections broke.
+- **Full auditor view** — every matching rule is inspectable, for security
+  review
+- **7-day free trial** on first launch · **$99 one-time** license
+- **Offline license activation** via Ed25519 — no license server, no
+  phone-home
+- **Polished email delivery** — your license key lands in your inbox within
+  minutes of purchase, in a branded HTML email
 
-See [CHANGELOG](https://github.com/louisbyun/narubase-probe/blob/main/CHANGELOG.md)
-for the detailed scope of v1.0.0.
+## Roadmap
 
-## Roadmap — shipping every few weeks
-
-- **v1.1** — TCP, HTTP, and proxy probes. 10+ diagnostic cases. Local
-  history persistence. Settings panel.
-- **v1.2** — Windows IP Helper route introspection. Full UI localization
-  (Korean / Japanese). Authenticode-signed installer.
-- **v1.5** — Paid license enforcement. Team and Enterprise tiers.
-- **v2.0** — Enterprise custom-case ingestion. On-premises update server
-  for air-gapped deployments.
+- **v1.2** — TCP port + HTTP probes, system-proxy detection, Windows IP
+  Helper route introspection, 10+ additional diagnostic cases.
+- **v1.3** — Full Korean / Japanese UI localization, Authenticode-signed
+  installer.
+- **v1.5** — Enterprise custom-case ingestion, batch mode, scheduled
+  background monitoring, evidence-bundle PDF export.
+- **v2.0** — On-premises update server for air-gapped deployments.
 
 ## Frequently asked
 
 **Is my data sent anywhere?**
-No. Zero diagnostic data leaves your machine. The only outbound HTTP request
-is an optional version-check to this public repository.
+No. Zero diagnostic data leaves your machine. Zero telemetry. The only
+outbound HTTP request is an optional version-check to this public
+repository.
 
 **Will it work behind our corporate proxy / firewall / TLS inspection?**
 That's exactly what it's built to detect. Probe is designed to tell you
@@ -115,7 +122,7 @@ That's exactly what it's built to detect. Probe is designed to tell you
 **Does it work offline?**
 The diagnosis itself, yes. You need connectivity to whatever target you're
 trying to reach, of course. But Probe doesn't call any service of ours to
-interpret the result.
+interpret the result — and license activation is fully offline too.
 
 **How is this different from Wireshark / curl / ping?**
 Those tools are for network engineers. Probe is for the other 99% of
@@ -124,10 +131,10 @@ employees — the people who have a problem but don't know what a packet is.
 **macOS / Linux?**
 Windows-first. Other platforms on the longer-term roadmap.
 
-**Is this a rebrand of NaruBase Cloud?**
+**Is this a rebrand of NaruBase™ Cloud?**
 No. [NaruBase™ Cloud](https://github.com/louisbyun/narubase-prod) is a
-multi-cloud server management tool. Probe is a network-diagnostic tool.
-Same studio, same brand family, different products.
+multi-cloud server management tool. NaruBase™ Probe is a network-diagnostic
+tool. Same studio, same brand family, different products.
 
 ## Enterprise & team licensing
 
