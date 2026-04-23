@@ -1,272 +1,153 @@
 <div align="center">
 
-<img src="logo.png" alt="NaruBase Probe logo" width="96" height="96" />
+<img src="logo.png" alt="NaruBase Probe" width="96" height="96" />
 
 # NaruBase™ Probe
 
-**The enterprise-approvable network diagnostic tool — 100% local, no cloud AI.**
+### Stop the IT-ticket ping-pong.
 
-When apps fail behind corporate firewalls, proxies, or TLS inspection,
-Probe identifies the exact cause and produces an IT-ready message — without
-ever sending your data to the cloud.
+**The only AI-like network diagnostic your corporate IT will actually approve.**
+100% local. No cloud. No telemetry. No accounts.
 
 [![Version](https://img.shields.io/badge/version-1.0.0-success)](https://github.com/louisbyun/narubase-probe-prod/releases/latest)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)]()
+[![Price](https://img.shields.io/badge/price-%2499%20one--time-0ea5e9)]()
 [![License](https://img.shields.io/badge/license-Proprietary-blue)]()
-[![Price](https://img.shields.io/badge/pricing-TBD-0ea5e9)]()
 
-### [⬇ Download for Windows](https://github.com/louisbyun/narubase-probe-prod/releases/latest) · [📖 Install guide](INSTALL.md)
+### [⬇ Download for Windows](https://github.com/louisbyun/narubase-probe-prod/releases/latest) &nbsp;·&nbsp; [📖 Install guide](INSTALL.md)
 
-**v1.0.0 — Early access release.** Early-access pricing is not yet enforced in-app.
+**Free during early access.** $99 one-time at v1.1. **No subscription. Ever.**
 
 </div>
 
 ---
 
-## The problem NaruBase Probe solves
+## "Why is this app broken?"
 
-You're working from a corporate office. A SaaS tool that worked fine yesterday
-suddenly won't load. Your HTTPS API calls return certificate errors. A specific
-port times out but the browser works. An internal team wiki opens but an
-external vendor portal doesn't.
+You know the scene. A SaaS tool that worked yesterday suddenly won't load.
+An API returns certificate errors. A specific port times out. Your IT ticket
+bounces for three days: *"what's broken?"* → *"the app"* → *"which part?"* →
+*"I don't know."*
 
-You open a ticket. Your IT team asks **"what's broken?"** You answer **"the
-app."** They ask **"which part?"** You don't know. The ticket bounces for days.
+Meanwhile your browser keeps saying "Connection not secure" and your boss is
+asking why the report isn't ready.
 
-This is the daily reality in every mid-to-large enterprise running:
+**NaruBase Probe tells you exactly what's wrong — in the same tab — and
+writes the IT ticket for you.**
 
-- **Corporate TLS inspection** (Zscaler, Bluecoat, Palo Alto, Fortinet…) that
-  intercepts HTTPS and re-signs certificates with an internal CA your app
-  doesn't trust.
-- **Selective firewall rules** that block specific ports, regions, or
-  protocols.
-- **PAC / WPAD proxies** where some URLs route and some don't, without any
-  clear reason to the end user.
-- **Split DNS** where internal names resolve but external ones don't (or vice
-  versa).
-- **VPN state interactions** where apps work off-VPN but break on-VPN
-  (or the opposite).
+## In 10 seconds
 
-**NaruBase Probe** runs real network tests from your machine, interprets the
-results against a curated case database, and writes the diagnosis in plain
-language — including a copy-ready message for your IT team with the technical
-details attached. All of this happens **locally**. Nothing leaves your
-computer.
+<img src="logo.png" alt="" width="24" align="left" /> &nbsp; Paste the URL that isn't working.
 
-## Why it's different
+<img src="logo.png" alt="" width="24" align="left" /> &nbsp; Probe runs the network tests locally.
 
-### 🔒 100% local, by design
+<img src="logo.png" alt="" width="24" align="left" /> &nbsp; Read the plain-language diagnosis.
 
-No cloud AI call. No telemetry. No account. No license server check-in at
-runtime. The only outbound HTTP request the app makes is an optional version
-check to this marketing repository on GitHub (which can be disabled); your
-diagnostic data — the URLs you test, the certificates you receive, the DNS
-answers you get back — **never leaves your machine**.
+<img src="logo.png" alt="" width="24" align="left" /> &nbsp; Click **Copy IT message** — paste into your ticket.
 
-This is not a privacy claim bolted onto a cloud product. It's the core of the
-architecture. The product literally cannot phone home with your data because
-there is no code path to do so.
+That's it. No expertise required. No cloud service to trust. No data leaves
+your machine.
 
-### 📋 Enterprise-approvable
+## Three reasons your IT team will approve this
 
-Most "AI diagnostic tools" fail the first enterprise security review because
-they either (a) require external API calls to OpenAI / Anthropic / Gemini, or
-(b) run a black-box model locally with no way for auditors to understand its
-reasoning.
+### 🔒 100% local. No exceptions.
 
-NaruBase Probe uses **deterministic rule-based matching** against a **fully
-auditable case database** — a JSON file shipped inside the application. Every
-diagnosis the app produces is traceable: for any result, you can see exactly
-which patterns matched, with what weights, against which probe outputs.
-Security teams can review the entire decision process statically.
+No cloud AI. No telemetry. No accounts. No license server check-in. Your
+diagnostic data — the URLs you test, the certificates you see, the DNS
+answers you get — **never leaves your computer**.
 
-### 🌐 Non-expert friendly
+The only outbound network request the app makes is an optional version
+check against GitHub (toggle-off in Settings). That's it.
 
-You don't need to know what a CA is, or what "TLS 1.3" means, or how DNS
-resolution works. You type in a URL. Probe tests it. If it matches a known
-corporate-network failure mode, you get:
+### 📋 Auditable by design
 
-- A **plain-language explanation** of what's happening.
-- A **ready-to-send IT ticket** describing the problem with the technical
-  details a helpdesk needs, pre-filled in your language (English, Korean,
-  Japanese).
-- **Recommended remediation steps** the end user can try first.
+Every diagnosis Probe produces is traceable. One click shows you the exact
+rules that matched, with what weights, against what measured values. Your
+security team can statically review the entire case database before you
+install. Nothing is hidden behind an opaque AI call — because there is no
+AI call.
 
-For IT helpdesk and consultants, the same app doubles as a fast triage tool —
-one click produces the same diagnostic and ticket that would otherwise take
-10-30 minutes to assemble manually.
+### 💳 One-time purchase. No subscription.
 
-## How it works
+$99 once. You own it. Use it on your work laptop forever. Pricing tiers for
+teams and site licenses available on request.
 
-```
-┌──────────────────────────────────────────────────┐
-│  Your machine (no external calls beyond target)  │
-│                                                  │
-│   1. You type a URL                              │
-│               │                                  │
-│               ▼                                  │
-│   2. Probe runs real network tests               │
-│      ├─ DNS resolution                           │
-│      ├─ TCP connectivity                         │
-│      ├─ TLS handshake + certificate chain        │
-│      ├─ HTTP(S) request                          │
-│      └─ System proxy detection                   │
-│               │                                  │
-│               ▼                                  │
-│   3. Rule engine matches results against         │
-│      the bundled case database                   │
-│               │                                  │
-│               ▼                                  │
-│   4. You see:                                    │
-│      ├─ What's wrong (plain language)            │
-│      ├─ IT message (copy-ready)                  │
-│      ├─ Remediation steps                        │
-│      └─ Full audit trace                         │
-└──────────────────────────────────────────────────┘
-```
+## Who it's for
 
-### Embedded Intelligence — the architectural principle
+| You are… | Probe helps you… |
+|---|---|
+| **An office employee** stuck behind corporate security | Describe your problem to IT in 30 seconds instead of 3 days |
+| **An IT helpdesk agent** drowning in vague tickets | Triage incoming issues in seconds with a single-pane diagnostic |
+| **A consultant / freelancer** hopping between client networks | Understand a new corporate environment in one run |
 
-"AI knowledge without an AI call at runtime." The diagnostic intelligence is
-authored at **development time**: we (and in v2.0, enterprise customers via
-custom case ingestion) write structured case definitions in JSON that encode
-real-world failure signatures. Those cases are compiled into the application
-binary. At runtime, the app performs real network measurements and matches
-their results against the case database using explicit rules. No language
-model is ever invoked. No external service is ever called.
+## What's in v1.0
 
-The result: a tool that **behaves like** an AI diagnostician, but qualifies
-for enterprise IT approval.
+- **DNS** and **TLS** diagnostic probes (more coming every release)
+- Detection of the #1 enterprise blocker: **corporate TLS inspection**
+  rewriting certificates with an internal CA your app doesn't trust
+- Ready-to-send IT ticket messages in **English, Korean, and Japanese**
+- Full auditor view of every matching rule
+- Cross-version update notifications
 
-## Features (v1.0)
+See [CHANGELOG](https://github.com/louisbyun/narubase-probe/blob/main/CHANGELOG.md)
+for the detailed scope of v1.0.0.
 
-### Probes
+## Roadmap — shipping every few weeks
 
-- **DNS** — async resolution with timing, error classification, and IPv4/IPv6
-  address enumeration.
-- **TLS** — TCP + handshake via `rustls`, full certificate chain capture,
-  public-root-trust detection via Mozilla's `webpki-roots`. This is the core
-  signal for detecting corporate TLS inspection.
+- **v1.1** — TCP, HTTP, and proxy probes. 10+ diagnostic cases. Local
+  history persistence. Settings panel.
+- **v1.2** — Windows IP Helper route introspection. Full UI localization
+  (Korean / Japanese). Authenticode-signed installer.
+- **v1.5** — Paid license enforcement. Team and Enterprise tiers.
+- **v2.0** — Enterprise custom-case ingestion. On-premises update server
+  for air-gapped deployments.
 
-Planned for v1.1+: TCP port probe, HTTP(S) with redirect chain, system proxy
-detection (WinHTTP / WinINet / PAC), Windows IP Helper route introspection,
-Windows CryptoAPI chain validation.
-
-### Matcher
-
-- Pattern operators: `equals`, `not_equals`, `contains`, `matches` (regex),
-  `is_present`, `is_absent`.
-- Weighted confidence scoring with `required`-pattern short-circuiting.
-- Full per-pattern evaluation trace — every decision the matcher makes is
-  recoverable in the UI's "auditor view".
-
-### Case database
-
-v1.0 ships with one case: **`corporate_tls_inspection`** — detects the
-signature of a corporate TLS inspection proxy re-signing HTTPS traffic with
-an internal CA. Localized in English, Korean, and Japanese.
-
-The case DB is the central asset of the product; it expands
-release-over-release. Target for v1.x is 20-50 bundled cases covering the
-most common enterprise-network failure modes.
-
-### UI
-
-Four tabs — **Diagnose**, **History**, **Settings**, **About** — visually
-consistent with [NaruBase™ Cloud](https://github.com/louisbyun/narubase-prod),
-the sister product in the NaruBase desktop tool line.
-
-### Internationalization
-
-Case content (title, explanation, IT-ticket template, remediation steps) ships
-in English, Korean, and Japanese. UI chrome is English in v1.0; full UI
-localization is planned for v1.1.
-
-## Download & install
-
-**Windows 10 / 11 (x86_64):**
-
-Grab the latest MSI from the [Releases
-page](https://github.com/louisbyun/narubase-probe-prod/releases/latest) and
-follow [INSTALL.md](INSTALL.md).
-
-## Roadmap
-
-| Version | Target | Focus |
-|---|---|---|
-| **v1.0** | **released** | DNS + TLS probes, matcher, 1 case, desktop shell |
-| v1.1 | Q2 2026 | TCP + HTTP probes, proxy detection, 10+ cases, history persistence |
-| v1.2 | Q3 2026 | Windows IP Helper integration, full i18n UI, settings panel |
-| v1.5 | Q4 2026 | License enforcement, paid tiers, installer signing |
-| v2.0 | 2027+ | Enterprise custom-case ingestion, on-premises update server |
-
-## FAQ
+## Frequently asked
 
 **Is my data sent anywhere?**
-No. The diagnostic data — your URLs, certificates, DNS answers — stays
-entirely on your machine. The only outbound call the app makes is to fetch
-this repository's `version.json` for update notifications, and that can be
-disabled (planned v1.1 setting).
+No. Zero diagnostic data leaves your machine. The only outbound HTTP request
+is an optional version-check to this public repository.
 
-**Does it work without internet?**
-Yes, for the diagnostic itself. You need network connectivity to reach the
-target you're diagnosing, of course, but Probe doesn't need to phone any
-service of ours to interpret the result — the case database is embedded in
-the binary.
+**Will it work behind our corporate proxy / firewall / TLS inspection?**
+That's exactly what it's built to detect. Probe is designed to tell you
+*because* your corporate security is in the path — not *despite* it.
 
-**Does it work behind corporate TLS inspection?**
-That's exactly what it's built to detect. When Probe's TLS probe encounters
-a chain that doesn't validate against Mozilla's public root set, that's the
-signal that corporate inspection is in the path — which is the state that
-causes many SaaS apps to fail. Probe flags this explicitly.
+**Does it work offline?**
+The diagnosis itself, yes. You need connectivity to whatever target you're
+trying to reach, of course. But Probe doesn't call any service of ours to
+interpret the result.
 
-**Can I add my own custom cases?**
-Not in v1.0; case bundling is compile-time only. Custom-case ingestion is on
-the v2.0 roadmap for enterprise deployments.
+**How is this different from Wireshark / curl / ping?**
+Those tools are for network engineers. Probe is for the other 99% of
+employees — the people who have a problem but don't know what a packet is.
 
 **macOS / Linux?**
-Not yet. The architecture is cross-platform-friendly, but the Windows IP
-Helper / CryptoAPI / WinHTTP probes are Windows-specific and the first target
-market (Korean / Japanese / European enterprise office workers) is
-Windows-dominant. macOS is on the longer-term roadmap.
+Windows-first. Other platforms on the longer-term roadmap.
 
-**How is this different from Wireshark / ping / curl?**
-Those are the right tools for network engineers. Probe is the right tool for
-an end user who doesn't know what a packet is but needs to describe their
-problem accurately to IT. The same underlying measurements, radically
-different presentation — and a case database that does the interpretation.
-
-**Is this the same as NaruBase Cloud?**
+**Is this a rebrand of NaruBase Cloud?**
 No. [NaruBase™ Cloud](https://github.com/louisbyun/narubase-prod) is a
-local-first multi-cloud server management tool. NaruBase™ Probe is a local
-network-diagnostic tool. They share the **NaruBase** brand, the **aiSwingX™**
-studio, and the visual design language, but they solve different problems.
+multi-cloud server management tool. Probe is a network-diagnostic tool.
+Same studio, same brand family, different products.
 
-## Privacy statement
+## Enterprise & team licensing
 
-NaruBase Probe is a local desktop application. It does not collect telemetry,
-it has no user accounts, and it does not transmit diagnostic data.
+Per-seat team licensing and site licenses for enterprise deployments are
+available. Contact for quotes, pilot agreements, or custom-case ingestion.
 
-**Outbound network traffic the app makes:**
+## Download
 
-1. **Whatever URL you explicitly ask it to diagnose** — this is the whole
-   point of the tool.
-2. **An optional version check** that fetches the static `version.json` file
-   from this public marketing repository at
-   `https://raw.githubusercontent.com/louisbyun/narubase-probe-prod/main/version.json`.
-   This request contains only a standard HTTP User-Agent identifying the
-   app version and platform; no user-identifying data is sent. Disabling this
-   check will be possible in v1.1's Settings panel.
+### [⬇ Latest release — Windows x64](https://github.com/louisbyun/narubase-probe-prod/releases/latest)
 
-Nothing else.
+- **MSI installer** — for standard / silent-install deployment.
+- **NSIS setup.exe** — for manual installs.
 
-## License
+See [INSTALL.md](INSTALL.md) for walkthrough, system requirements, and
+troubleshooting.
+
+## Legal
 
 Proprietary © 2026 aiSwingX. All rights reserved.
 
-## Contact
+Source: [louisbyun/narubase-probe](https://github.com/louisbyun/narubase-probe) (private).
 
-Louis Byun — [louisbyun](https://github.com/louisbyun) on GitHub.
-
-For enterprise licensing, custom-case ingestion pilots, or partnership
-inquiries, please open an issue on this repository or reach out via GitHub.
+Contact: [Louis Byun on GitHub](https://github.com/louisbyun)
